@@ -28,7 +28,7 @@ function parseAcceptLanguageEntry(entry: string): [string, number] {
 }
 
 export function getSuitableLocale(request: Request): string {
-	const header: string = request['accept-language'] || '';
+	const header: string = request.headers.get('accept-language') || '';
 	const preferredLocales = header.split(/,\s*/).map(parseAcceptLanguageEntry);
 	const supportedLocales = new Set(locales.get());
 	let result = defaultLocale;
