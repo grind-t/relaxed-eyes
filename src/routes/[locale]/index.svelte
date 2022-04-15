@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+	import { t } from '$lib/translations';
 </script>
 
 <svelte:head>
@@ -10,7 +11,7 @@
 </svelte:head>
 
 <div>
-	<h1>Hello world!</h1>
+	<h1>{$t('home.greeting')}</h1>
 </div>
 
 <style>
