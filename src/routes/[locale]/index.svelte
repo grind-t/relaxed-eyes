@@ -11,7 +11,7 @@
 </svelte:head>
 
 <div>
-	<h1>{$t('home.greeting')}</h1>
+	<h1 class="text-3xl">{$t('home.greeting')}</h1>
 </div>
 
 <style>
