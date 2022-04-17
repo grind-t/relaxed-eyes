@@ -7,6 +7,16 @@ export const config: Config = {
 	loaders: [
 		{
 			locale: 'en',
+			key: 'common',
+			loader: async () => (await import('./en/common.json')).default
+		},
+		{
+			locale: 'ru',
+			key: 'common',
+			loader: async () => (await import('./ru/common.json')).default
+		},
+		{
+			locale: 'en',
 			key: 'home',
 			routes: ['/'],
 			loader: async () => (await import('./en/home.json')).default
