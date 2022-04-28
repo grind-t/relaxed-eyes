@@ -1,8 +1,8 @@
 <script lang="ts">
-	import PlayIcon from '$lib/components/icons/play-icon.svelte';
-	import PauseIcon from '$lib/components/icons/pause-icon.svelte';
-	import ResetIcon from '$lib/components/icons/reset-icon.svelte';
-	import Button from '$lib/components/controls/button.svelte';
+	import PlayIcon from '$lib/common/icons/play-icon.svelte';
+	import PauseIcon from '$lib/common/icons/pause-icon.svelte';
+	import ResetIcon from '$lib/common/icons/reset-icon.svelte';
+	import Button from '$lib/common/controls/button.svelte';
 	import { t } from '$lib/translations';
 
 	export let label: string;
