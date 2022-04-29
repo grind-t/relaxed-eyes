@@ -14,17 +14,22 @@ test.describe('snapshot matches', () => {
 	});
 
 	test('settings', async ({ page }) => {
-		await page.locator(`[title="${strings.settings}"]`).click();
+		const button = page.locator(`button[title="${strings.settings}"]`);
+		const dialog = page.locator(`dialog:has-text("${strings.settings}")`);
+		await button.click({ delay: 100 });
+		await expect(dialog).toBeVisible();
 		expect.soft(await page.screenshot()).toMatchSnapshot('settings.png');
 	});
 
 	test('info', async ({ page }) => {
-		await page.locator(`[title="${strings.info}"]`).click();
+		const button = page.locator(`button[title="${strings.info}"]`);
+		const dialog = page.locator(`dialog:has-text("${strings.info}")`);
+		await button.click({ delay: 100 });
+		await expect(dialog).toBeVisible();
 		expect.soft(await page.screenshot()).toMatchSnapshot('info.png');
 	});
 
 	test.skip('share', async ({ page }) => {
-		await page.locator(`[title="${strings.share}"]`).click();
-		expect.soft(await page.screenshot()).toMatchSnapshot('share.png');
+		const button = page.locator(`button[title="${strings.share}"]`);
 	});
 });

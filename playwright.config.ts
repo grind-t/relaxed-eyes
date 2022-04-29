@@ -9,7 +9,11 @@ const config: PlaywrightTestConfig = {
 	fullyParallel: true,
 	use: {
 		baseURL: 'http://localhost:3000',
-		trace: 'on-first-retry'
+		trace: 'on-first-retry',
+		video: 'on-first-retry'
+	},
+	expect: {
+		toMatchSnapshot: { maxDiffPixels: 100 }
 	},
 	projects: [
 		{
