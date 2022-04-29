@@ -1,0 +1,10 @@
+{
+	"settings": "Settings",
+	"info": "Info",
+	"share": "Share",
+	"timer": {
+		"start": "Start timer",
+		"pause": "Pause timer",
+		"reset": "Reset timer"
+	}
+}

@@ -8,24 +8,24 @@ export const config: Config = {
 		{
 			locale: 'en',
 			key: 'common',
-			loader: async () => (await import('./en/common.json')).default
+			loader: async () => (await import('./l10n/common/en.json')).default
 		},
 		{
 			locale: 'ru',
 			key: 'common',
-			loader: async () => (await import('./ru/common.json')).default
+			loader: async () => (await import('./l10n/common/ru.json')).default
 		},
 		{
 			locale: 'en',
 			key: 'home',
 			routes: ['/'],
-			loader: async () => (await import('./en/home.json')).default
+			loader: async () => (await import('./l10n/home/en.json')).default
 		},
 		{
 			locale: 'ru',
 			key: 'home',
 			routes: ['/'],
-			loader: async () => (await import('./ru/home.json')).default
+			loader: async () => (await import('./l10n/home/ru.json')).default
 		}
 	]
 };

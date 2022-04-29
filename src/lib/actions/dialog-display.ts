@@ -1,4 +1,4 @@
-import dialogPolyfill from './dialog-polyfill';
+import dialogPolyfill from '$lib/compatibility/dialog-polyfill';
 
 export interface DialogDisplayParams {
 	open?: boolean;
@@ -6,7 +6,10 @@ export interface DialogDisplayParams {
 }
 
 // HTMLDialogElement is experimental, so the element is of any type.
-export function dialogDisplay(element: any, params: DialogDisplayParams): SvelteActionReturnType {
+export default function dialogDisplay(
+	element: any,
+	params: DialogDisplayParams
+): SvelteActionReturnType {
 	dialogPolyfill.registerDialog(element);
 	const update = (params: DialogDisplayParams) => {
 		if (!params.open) element.close();

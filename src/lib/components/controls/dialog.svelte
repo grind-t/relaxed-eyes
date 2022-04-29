@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { dialogDisplay } from './dialog-actions';
+	import dialogDisplay from '$lib/actions/dialog-display';
 
 	export let open = false;
 	export let modal = false;
