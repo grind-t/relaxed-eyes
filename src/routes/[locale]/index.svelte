@@ -4,7 +4,7 @@
 
 <script lang="ts">
 	import Timer from '$lib/components/controls/timer.svelte';
-	import { t } from '$lib/translations';
+	import { t } from '$lib/g11n/i18n';
 </script>
 
 <svelte:head>
