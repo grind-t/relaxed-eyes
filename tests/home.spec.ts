@@ -29,7 +29,7 @@ test.describe('snapshot matches', () => {
 		expect.soft(await page.screenshot()).toMatchSnapshot('info.png');
 	});
 
-	test.skip('share', async ({ page }) => {
+	/*test.skip('share', async ({ page }) => {
 		const button = page.locator(`button[title="${strings.share}"]`);
-	});
+	});*/
 });

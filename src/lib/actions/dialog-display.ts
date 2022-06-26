@@ -5,8 +5,9 @@ export interface DialogDisplayParams {
 	modal?: boolean;
 }
 
-// HTMLDialogElement is experimental, so the element is of any type.
 export default function dialogDisplay(
+	// HTMLDialogElement is experimental, so the element is of any type.
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	element: any,
 	params: DialogDisplayParams
 ): SvelteActionReturnType {
