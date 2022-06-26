@@ -13,7 +13,7 @@ jobs:
       - run: npm run lint
       - run: npm run check
       - run: vercel --no-clipboard --scope ${{secrets.VERCEL_SCOPE}} --token=${{secrets.VERCEL_TOKEN}}
-        env: 
+        env:
           VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
           VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
         id: 'abc'
