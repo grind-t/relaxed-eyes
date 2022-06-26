@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-
 	import Timer from '$lib/components/controls/timer.svelte';
 
 	const strings = {
