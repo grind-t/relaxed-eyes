@@ -3,7 +3,7 @@ import type { Handle } from '@sveltejs/kit';
 
 const routeRegex = new RegExp(/^\/[^.]*([?#].*)?$/);
 
-export const handle: Handle = async ({ event, resolve }) => {
+export const i18n: Handle = ({ event, resolve }) => {
 	const { url, request } = event;
 	const { pathname } = url;
 
@@ -19,7 +19,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		});
 	}
 
-	return await resolve(event, {
+	return resolve(event, {
 		transformPage: ({ html }) => html.replace('<html>', `<html lang="${locale}">`)
 	});
 };

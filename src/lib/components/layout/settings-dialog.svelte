@@ -1,12 +1,21 @@
 <script lang="ts">
-	import { t } from '$lib/g11n/i18n';
 	import Dialog from '$lib/components/controls/dialog.svelte';
+	import { page } from '$app/stores';
+
+	const strings = {
+		en: {
+			title: 'Settings'
+		},
+		ru: {
+			title: 'Настройки'
+		}
+	}[$page.params.locale];
 
 	export let open = false;
 </script>
 
 <Dialog {open} modal on:cancel>
-	<h2>{$t('common.settings')}</h2>
+	<h2>{strings.title}</h2>
 	<!--<label class="block">
 		<span>{$t('common.useExercisesLabel')}</span>
 		<input type="checkbox" />
