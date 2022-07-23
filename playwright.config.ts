@@ -24,7 +24,7 @@ const config: PlaywrightTestConfig = {
 	],
 	expect: {
 		toMatchSnapshot: {
-			maxDiffPixels: 100
+			maxDiffPixels: 101
 		}
 	},
 	fullyParallel: true
