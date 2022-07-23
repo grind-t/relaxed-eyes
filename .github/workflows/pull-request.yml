@@ -1,4 +1,4 @@
-on: 
+on:
   pull_request:
     branches:
       - master
@@ -21,7 +21,7 @@ jobs:
           VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: npm run -s deploy:preview
-      - env: 
+      - env:
           PREVIEW_URL: ${{ steps.preview.outputs.stdout }}
         run: npm run e2e
       - uses: actions/upload-artifact@v3
