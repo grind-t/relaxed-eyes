@@ -1,8 +1,4 @@
 import { expect, test } from '@playwright/test';
-import { getStrings } from './globals.js';
-
-const pageName = 'home';
-const strings = await getStrings(pageName);
 
 test.beforeEach(async ({ page }) => {
 	await page.goto('/');
@@ -14,17 +10,17 @@ test.describe('snapshot matches', () => {
 	});
 
 	test('settings', async ({ page }) => {
-		const button = page.locator(`button[title="${strings.settings}"]`);
-		const dialog = page.locator(`dialog:has-text("${strings.settings}")`);
-		await button.click({ delay: 100 });
+		const button = page.locator(`button[title="Settings"]`);
+		const dialog = page.locator(`dialog:has-text("Settings")`);
+		await button.click({ delay: 500 });
 		await expect(dialog).toBeVisible();
 		expect.soft(await page.screenshot()).toMatchSnapshot('settings.png');
 	});
 
 	test('info', async ({ page }) => {
-		const button = page.locator(`button[title="${strings.info}"]`);
-		const dialog = page.locator(`dialog:has-text("${strings.info}")`);
-		await button.click({ delay: 100 });
+		const button = page.locator(`button[title="Info"]`);
+		const dialog = page.locator(`dialog:has-text("Info")`);
+		await button.click({ delay: 500 });
 		await expect(dialog).toBeVisible();
 		expect.soft(await page.screenshot()).toMatchSnapshot('info.png');
 	});

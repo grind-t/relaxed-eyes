@@ -1,19 +1,12 @@
 import { devices } from '@playwright/test';
+import { env } from 'process';
 import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-	webServer: {
-		command: 'npm run build && npm run preview',
-		port: 3000
-	},
-	fullyParallel: true,
 	use: {
-		baseURL: 'http://localhost:3000',
-		trace: 'on-first-retry',
-		video: 'on-first-retry'
-	},
-	expect: {
-		toMatchSnapshot: { maxDiffPixels: 100 }
+		baseURL: env.PREVIEW_URL || 'http://localhost:3000',
+		trace: 'retain-on-failure',
+		video: 'retain-on-failure'
 	},
 	projects: [
 		{
@@ -28,7 +21,13 @@ const config: PlaywrightTestConfig = {
 			name: 'webkit',
 			use: { ...devices['Desktop Safari'] }
 		}
-	]
+	],
+	expect: {
+		toMatchSnapshot: {
+			maxDiffPixels: 100
+		}
+	},
+	fullyParallel: true
 };
 
 export default config;
