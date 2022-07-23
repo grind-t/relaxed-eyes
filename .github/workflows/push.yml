@@ -12,4 +12,9 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npm run deploy:prod
+      - env:
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npm run deploy:prod
