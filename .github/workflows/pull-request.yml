@@ -24,7 +24,7 @@ jobs:
         run: npm run -s deploy:preview
       - env:
           PREVIEW_URL: ${{ steps.preview.outputs.stdout }}
-        run: npm run e2e
+        run: echo $PREVIEW_URL
       - uses: actions/upload-artifact@v3
         if: failure()
         with:
