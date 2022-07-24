@@ -20,7 +20,7 @@ const config: PlaywrightTestConfig = {
 		},
 		{
 			name: 'webkit',
-			use: { ...devices['iPhone 5'] }
+			use: { ...devices['Desktop Safari'] }
 		}
 	],
 	expect: {
