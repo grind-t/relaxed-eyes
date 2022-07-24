@@ -5,6 +5,7 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
 	use: {
 		baseURL: env.PREVIEW_URL || 'http://localhost:3000',
+		viewport: { width: 1280, height: 720 },
 		trace: 'retain-on-failure',
 		video: 'retain-on-failure'
 	},
@@ -24,6 +25,7 @@ const config: PlaywrightTestConfig = {
 	],
 	expect: {
 		toMatchSnapshot: {
+			threshold: 0.4,
 			maxDiffPixels: 100
 		}
 	},
