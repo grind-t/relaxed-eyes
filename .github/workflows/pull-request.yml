@@ -12,6 +12,7 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
+      - run: npx playwright install --with-deps
       - run: npm run lint
       - run: npm run check
       - id: preview
