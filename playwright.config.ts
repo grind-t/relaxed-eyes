@@ -19,11 +19,12 @@ const config: PlaywrightTestConfig = {
 		},
 		{
 			name: 'webkit',
-			use: { ...devices['Desktop Safari'] }
+			use: { ...devices['iPhone 5'] }
 		}
 	],
 	expect: {
 		toMatchSnapshot: {
+			threshold: 0.5,
 			maxDiffPixels: 100
 		}
 	},
