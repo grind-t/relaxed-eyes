@@ -3,7 +3,7 @@ on:
     branches:
       - master
 jobs:
-  main:
+  test:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     if: github.event.deployment_status.state == 'success'
