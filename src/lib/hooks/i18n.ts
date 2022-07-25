@@ -20,6 +20,6 @@ export const i18n: Handle = ({ event, resolve }) => {
 	}
 
 	return resolve(event, {
-		transformPage: ({ html }) => html.replace('<html>', `<html lang="${locale}">`)
+		transformPageChunk: ({ html }) => html.replace('<html>', `<html lang="${locale}">`)
 	});
 };
